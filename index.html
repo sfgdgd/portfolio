@@ -286,6 +286,96 @@ input, textarea {
   .timeline-item.right { left: 0; }
   .timeline-item::after { left: 10px; }
 }
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* For Tablets and smaller Screens (max 1024px) */
+@media screen and (max-width: 1024px) {
+  .hero {
+    flex-direction: column; /* Stack profile and text vertically */
+    text-align: center;
+    gap: 40px;
+    height: auto;
+    padding-top: 150px; /* Space for fixed nav */
+  }
+
+  .profile-box {
+    width: 320px; /* Shrink profile box slightly */
+    height: 320px;
+  }
+}
+
+/* For Mobile Devices (max 768px) */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 10px 15px;
+    flex-direction: column; /* Stack logo and links */
+    border-radius: 20px;
+  }
+  
+  nav a {
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Skills Grid adjustment */
+  .skills {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+  }
+
+  /* Education Timeline adjustment */
+  .timeline::after {
+    left: 20px; /* Move the center line to the left */
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 0;
+  }
+
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item::after {
+    left: 10px; /* Align dots to the left line */
+  }
+
+  .timeline-item.left::after {
+    right: auto;
+    left: 10px;
+  }
+
+  section {
+    padding: 60px 20px; /* Reduce padding for small screens */
+  }
+
+  /* Certificates Grid adjustment */
+  .cert-section {
+    grid-template-columns: 1fr; /* Stack certificates on mobile */
+  }
+}
+
+/* Extra Small Devices (max 480px) */
+@media screen and (max-width: 480px) {
+  .profile-box {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  nav h3 {
+    font-size: 1rem;
+  }
+}  
 </style>
 
 </head>
