@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aswini Portfolio</title>
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+<!-- PARTICLES -->
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* PARTICLES */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 20px;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgba(0,255,255,0.3), rgba(0,0,255,0.3), rgba(128,0,128,0.3));
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo i {
+  font-size: 24px;
+  color: white;
+}
+
+nav a {
+  color: #eee;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: cyan;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.profile-box {
+  width: 420px;
+  height: 420px;
+  background: linear-gradient(135deg, cyan, blue);
+  padding: 8px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px cyan;
+}
+
+.profile-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: cyan;
+}
+
+.hero-text p {
+  color: #aaa;
+  margin: 10px 0;
+}
+
+#typing {
+  border-right: 2px solid cyan;
+  padding-right: 5px;
+}
+
+button {
+  padding: 12px 25px;
+  background: cyan;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* SECTION */
+section {
+  padding: 100px 60px;
+}
+
+h2 {
+  color: cyan;
+  margin-bottom: 30px;
+}
+
+/* SKILLS (GRADIENT ADDED) */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+.skill {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6, #9333ea);
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px cyan;
+}
+
+.skill i {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+/* PROJECT */
+.project {
+  background:linear-gradient(135deg, #06b6d4, #e1e0e9);
+  padding: 20px;
+  border-radius: 15px;
+  
+}
+.project2{
+    background: linear-gradient(135deg, rgba(0,255,255,0.3), rgba(0,0,255,0.3), rgba(128,0,128,0.3));
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+.project3{
+  background:linear-gradient(135deg, #8602d2, #e1e0e9);
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+/* CERT */
+.cert-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.cert {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.cert img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cert:hover {
+  box-shadow: 0 0 20px cyan;
+}
+
+/* CONTACT */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background: #1e293b;
+  color: white;
+}
+
+.social i {
+  font-size: 25px;
+  margin: 10px;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: cyan;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+}
+
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+
+.content {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.content:hover {
+  box-shadow: 0 0 20px cyan;
+  transform: scale(1.03);
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -10px;
+  background: cyan;
+  border-radius: 50%;
+  top: 25px;
+}
+
+.timeline-item.right::after { left: -10px; }
+
+.content h3 { color: cyan; }
+.score { margin-top: 8px; font-weight: bold; }
+
+@media screen and (max-width: 768px) {
+  .timeline::after { left: 20px; }
+  .timeline-item { width: 100%; padding-left: 50px; }
+  .timeline-item.right { left: 0; }
+  .timeline-item::after { left: 10px; }
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<!-- NAVBAR -->
+
+<nav>
+  <div class="logo">
+    <i class="ri-code-s-slash-line"></i>
+    <h3>Aswini</h3>
+  </div>
+  <div>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#cert">Certificates</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="profile-box">
+    <img src="profile2.jpeg">
+  </div>
+
+  <div class="hero-text">
+    <h1>Aswini Mohapatra</h1>
+    <p id="typing"></p>
+    <a href="Cv.pdf" download>
+      <button>Download Resume</button>
+    </a>
+  </div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill"><i class="ri-code-line"></i>Python</div>
+    <div class="skill"><i class="ri-database-line"></i>SQL</div>
+    <div class="skill"><i class="ri-html5-line"></i>HTML</div>
+    <div class="skill"><i class="ri-css3-line"></i>CSS</div>
+    <div class="skill"><i class="ri-javascript-line"></i>JavaScript</div>
+    <div class="skill"><i class="ri-bootstrap-line"></i>Bootstrap</div>
+    <div class="skill"><i class="ri-git-branch-line"></i>Git</div>
+    <div class="skill"><i class="ri-terminal-line"></i>Django</div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+
+<!-- EDUCATION TIMELINE -->
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item left">
+      <div class="content">
+        <h3>MCA</h3>
+        <p>Utkal University</p>
+        <span>2023 – 2025</span>
+        <p class="score">CGPA: 8.16</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="content">
+        <h3>BCA</h3>
+        <p>Utkal University</p>
+        <span>2020 – 2023</span>
+        <p class="score">CGPA: 8.19</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="content">
+        <h3>12th</h3>
+        <p>SCS Jr. College, Puri</p>
+        <span>2018 – 2020</span>
+        <p class="score">62.16%</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="content">
+        <h3>10th</h3>
+        <p>Biswambhar Vidyapitha</p>
+        <span>2018</span>
+        <p class="score">76.76%</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECT -->
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project">
+    <h3>Tourism Management System</h3>
+    <p>Web application for tourism booking with MySQL integration.</p>
+  </div>
+   <div class="project2">
+    <h3>PortFolio Website</h3>
+    <p>Web application for my portfolio.</p>
+  </div>
+  <div class="project3">
+    <h3>Banking Application</h3>
+    <p>Web application for managing banking operations using Django.</p>
+  </div>
+</section>
+
+<!-- CERT -->
+
+<section id="cert">
+  <h2>Certificates</h2>
+  <div class="cert-section">
+    <div class="cert">
+      <img src="cert1.jpg">
+      <p>Deloitte Technology Simulation</p>
+    </div>
+    <div class="cert">
+      <img src="cert2.jpg">
+      <p>Yuva AI for All</p>
+    </div>
+    <div class="cert">
+      <img src="cert3.png">
+      <p>Introduction to Artificial Intelligence</p>
+    </div>
+    <div class="cert">
+      <img src="cert4.png">
+      <p>Introduction to  OpenAi GPT Models</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <h2>Contact</h2>
+  <form onsubmit="sendMsg(event)">
+    <input placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message"></textarea>
+    <button>Send</button>
+  </form>
+
+  <div class="social">
+    <a href="https://github.com/sfgdgd" target="_blank">
+      <i class="ri-github-fill"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/aswini-mohapatra" target="_blank">
+      <i class="ri-linkedin-fill"></i>
+    </a>
+    <a href="mailto:aswinimohapatra03@gmail.com">
+      <i class="ri-mail-fill"></i>
+    </a>
+  </div>
+</section>
+
+<script>
+/* typing */
+const text = "Full Stack Python Developer";
+let i = 0;
+function typing(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 50);
+  }
+}
+typing();
+
+/* particles */
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    size: { value: 3 },
+    move: { speed: 2 },
+    line_linked: { enable: true }
+  }
+});
+
+function sendMsg(e){
+  e.preventDefault();
+  alert("Message Sent 🚀");
+}
+</script>
+
+</body>
+</html>
